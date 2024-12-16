@@ -1,5 +1,6 @@
 "use client";
 
+import Header from "@/components/custom/header";
 import { useState } from "react";
 
 export default function Home() {
@@ -33,9 +34,9 @@ export default function Home() {
     // TODO: Update the UI here to show the images generated
     
     <div className="min-h-screen flex flex-col justify-between p-8">
+      <Header />
       <main className="flex-1">
         {/* Main content can go here */}
-        <h1 className="text-4xl">Pentagram</h1>
       </main>
 
       <footer className="w-full max-w-3xl mx-auto">
