@@ -1,45 +1,62 @@
 # Pentagram: Instagram, but with AI Images
+Submitted by: **Kevin**
 
-## Getting Started
+**AI-Images: Instagram** is an AI-powered image generator.
 
-First, clone the GitHub repository:
+## Required Features
 
-```bash
-git clone https://github.com/team-headstart/pentagram.git
-```
+The following **required** functionality is completed:
 
-Then, navigate to the project directory:
+- [X] **Host an image generation model (e.g., Stable Diffusion) on serverless GPUs through Modal, ensuring low-latency performance for smooth user experience.**
+- [X] **Create a web app that allows users to generate images from text prompts, manage their creations, and interact socially through likes, comments, and sharing features.**
+- [X] **Incorporate intuitive UI/UX design, authentication, and efficient image management with prompt histories.**
 
-```bash
-cd pentagram
-```
+The following **optional** features are implemented:
+- [ ] Bonus: Ensuring the hosted image generation model operates within low-latency thresholds (<2 seconds) while handling multiple concurrent requests
+- [ ] Bonus: Managing the dynamic scaling of GPU resources to handle demand spikes without exceeding cost or causing performance bottlenecks.
+- [ ] Bonus: Add the ability to search for images semantically
+- [ ] Bonus: Prevent harmful or inappropriate content from being generated
+- [ ] Bonus: Build a recommendation system that creates personalized feeds for users, balancing new content discovery with user preferences
 
-Then, install the dependencies:
+## Video Walkthrough
 
-```bash
-npm install
-```
+Here's a walkthrough of implemented user stories:
 
-Run the development server:
+<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-```bash
-npm run dev
-```
+<!-- Replace this with whatever GIF tool you used! -->
+GIF created with ...  
+<!-- Recommended tools:
+[Kap](https://getkap.co/) for macOS
+[ScreenToGif](https://www.screentogif.com/) for Windows
+[peek](https://github.com/phw/peek) for Linux. -->
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Notes
 
-## Tasks
+## Resources
+- Hello, world!: https://modal.com/docs/examples/hello_world
+- Building a Stable Diffusion + LoRA image generation pipeline on Modal: https://www.youtube.com/watch?v=sHSKArbiKmU&ab_channel=Modal
+- Run Stable Diffusion 3.5 Large Turbo as a CLI, API, and web UI: https://modal.com/docs/examples/text_to_image
+- H100 vs Other GPUs Choosing The Right GPU for your machine learning workload: https://www.digitalocean.com/community/tutorials/h100_vs_other_gpus_choosing_the_right_gpu_for_your_machine_learning_workload
+- Modal Playground: https://modal.com/playground/get_started
+- Cold start performance: https://modal.com/docs/guide/cold-start
+- Huggingface text to image models: https://modal.com/docs/guide/cold-start
+- Web endpoints: https://modal.com/docs/guide/webhooks
+  
+Describe any challenges encountered while building the app.
+    
+## License
 
-- Take a look at the TODOs in the repo, namely:
+    Copyright [2025] [Kevin]
 
-    - `src/app/page.tsx`: This is where the user can input their prompt and generate an image. Make sure to update the UI and handle the API response to display the images generated
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
 
-    - `src/app/api/generate-image/route.ts`: This is where the image generation API is implemented. Make sure to call your image generation API from Modal here
+        http://www.apache.org/licenses/LICENSE-2.0
 
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
