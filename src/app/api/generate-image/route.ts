@@ -28,9 +28,8 @@ export async function POST(request: Request) {
         if (!response.ok) {
             const errorText = await response.text();
             console.error("API Response: ", errorText);
-            console.error(process.env.MODAL_AUTH_KEY);
             throw new Error(
-                `HTTP error! status: ${response.status},message: ${errorText}`
+                `HTTP error! status: ${response.status},message: ${errorText} ${process.env.MODAL_AUTH_KEY}`
             );
         } else {
             console.log("response ok");
