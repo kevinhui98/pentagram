@@ -20,7 +20,7 @@ export async function POST(request: Request) {
         const response = await fetch(url.toString(), {
             method: "GET",
             headers: {
-                "X-API-KEY": process.env.API_KEY || "",
+                "X-API-KEY": process.env.MODAL_AUTH_KEY || "",
                 description: text,
                 Aceept: "image/jpeg",
             },
@@ -31,6 +31,8 @@ export async function POST(request: Request) {
             throw new Error(
                 `HTTP error! status: ${response.status},message: ${errorText}`
             );
+        } else {
+            console.log("response ok");
         }
         const imageBuffer = await response.arrayBuffer();
         const filename = `${crypto.randomUUID()}.jpg`;
