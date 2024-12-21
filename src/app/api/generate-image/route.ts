@@ -15,7 +15,7 @@ export async function POST(request: Request) {
             "https://kevinhui98--pentagram-model-generate.modal.run"
         );
         url.searchParams.set("prompt", text);
-        console.log(text);
+        console.log(url.toString());
         console.log("requesting URL: ", url.toString());
         const response = await fetch(url.toString(), {
             method: "GET",
@@ -28,6 +28,7 @@ export async function POST(request: Request) {
         if (!response.ok) {
             const errorText = await response.text();
             console.error("API Response: ", errorText);
+            console.log(process.env.MODAL_AUTH_KEY);
             throw new Error(
                 `HTTP error! status: ${response.status},message: ${errorText}`
             );
