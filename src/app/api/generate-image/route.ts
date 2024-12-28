@@ -21,10 +21,10 @@ export async function POST(request: Request) {
             method: "GET",
             headers: {
                 "X-API-KEY": process.env.MODAL_AUTH_KEY || "",
-                description: text,
                 Aceept: "image/jpeg",
             },
         });
+        console.log(process.env.MODAL_AUTH_KEY);
         if (!response.ok) {
             const errorText = await response.text();
             console.error("API Response: ", errorText);
@@ -35,7 +35,7 @@ export async function POST(request: Request) {
             console.log("response ok");
         }
         const imageBuffer = await response.arrayBuffer();
-        const filename = `${crypto.randomUUID()}.jpg`;
+        const filename = `${crypto.randomUUID()}+${text}.jpg`;
 
         const blob = await put(filename, imageBuffer, {
             access: "public",
