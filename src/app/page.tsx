@@ -50,7 +50,16 @@ export default function Home() {
         // TODO: Update the UI here to show the images generated
 
         <div className="min-h-screen flex flex-col justify-between p-8">
-            <main className="flex-1 flex flex-col items-center gap-8">
+            {/* <nav className="flex justify-between items-center gap-4">
+                <h1 className="text-3xl font-bold">Pentagram</h1>
+                <div className="flex items-center gap-5">
+                    <p>Display</p>
+                    <button className="px-4 py-2 rounded-lg bg-foreground text-background hover:bg-[#383838] dark:hover:bg-[#ccc] transition-colors">
+                        log in
+                    </button>
+                </div>
+            </nav> */}
+            <main className="flex-1 flex flex-col items-center gap-8 mb-8">
                 {imageUrl && (
                     <div className="w-full max-w-2xl rounded-lg overflow-hidden shadown-lg">
                         <img

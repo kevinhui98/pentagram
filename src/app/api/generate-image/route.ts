@@ -15,7 +15,7 @@ export async function POST(request: Request) {
             "https://kevinhui98--pentagram-model-generate.modal.run"
         );
         url.searchParams.set("prompt", text);
-        console.log(text);
+        console.log(url.toString());
         console.log("requesting URL: ", url.toString());
         const response = await fetch(url.toString(), {
             method: "GET",
@@ -25,6 +25,7 @@ export async function POST(request: Request) {
                 Accept: "image/jpeg",
             },
         });
+        console.log(process.env.MODAL_AUTH_KEY);
         if (!response.ok) {
             const errorText = await response.text();
             console.error("API Response: ", errorText);
@@ -35,7 +36,7 @@ export async function POST(request: Request) {
             console.log("response ok");
         }
         const imageBuffer = await response.arrayBuffer();
-        const filename = `${crypto.randomUUID()}.jpg`;
+        const filename = `${crypto.randomUUID()}+${text}.jpg`;
 
         const blob = await put(filename, imageBuffer, {
             access: "public",
