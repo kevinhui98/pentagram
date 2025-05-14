@@ -22,7 +22,7 @@ export async function POST(request: Request) {
             headers: {
                 "X-API-KEY": process.env.MODAL_AUTH_KEY || "",
                 description: text,
-                Aceept: "image/jpeg",
+                Accept: "image/jpeg",
             },
         });
         if (!response.ok) {
